@@ -901,12 +901,19 @@
 
     initDrag() {
       let isDragging = false;
+      let didDrag = false;
       let startX = 0;
       let scrollStart = 0;
 
+      const isInteractiveTarget = (target) => Boolean(
+        target.closest('a, button, input, select, textarea, label, form')
+      );
+
       const onPointerDown = (e) => {
         if (e.button !== 0) return;
+        if (isInteractiveTarget(e.target)) return;
         isDragging = true;
+        didDrag = false;
         startX = e.clientX;
         scrollStart = this.track.scrollLeft;
         this.track.style.scrollSnapType = 'none';
@@ -917,6 +924,7 @@
       const onPointerMove = (e) => {
         if (!isDragging) return;
         const dx = e.clientX - startX;
+        if (Math.abs(dx) > 5) didDrag = true;
         this.track.scrollLeft = scrollStart - dx;
       };
 
@@ -925,7 +933,9 @@
         isDragging = false;
         this.track.style.scrollSnapType = '';
         this.track.style.cursor = '';
-        this.track.releasePointerCapture(e.pointerId);
+        if (this.track.hasPointerCapture?.(e.pointerId)) {
+          this.track.releasePointerCapture(e.pointerId);
+        }
 
         const dx = e.clientX - startX;
         if (Math.abs(dx) > 30) {
@@ -939,7 +949,9 @@
       this.track.addEventListener('pointercancel', onPointerUp);
 
       this.track.addEventListener('click', (e) => {
-        if (Math.abs(e.clientX - startX) > 5) e.preventDefault();
+        if (!didDrag) return;
+        e.preventDefault();
+        didDrag = false;
       }, true);
     }
   }

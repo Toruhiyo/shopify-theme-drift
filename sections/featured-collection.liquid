@@ -1,18 +1,11 @@
 {%- liquid
-  assign _fallback_handles = 'featured-wheels,featured,wheels,hot-deals,hottest-deals,deals,highlighted' | split: ','
-  assign collection = section.settings.collection
-  if collection == blank
-    for _handle in _fallback_handles
-      assign _candidate = collections[_handle]
-      if _candidate != blank and _candidate.products_count > 0
-        assign collection = _candidate
-        break
-      endif
-    endfor
-  endif
-  if collection == blank
-    assign collection = collections.all
-  endif
+  assign _featured_fallbacks = 'featured-wheels,featured,wheels,hot-deals,hottest-deals,deals,highlighted,new-arrivals,new-arrival,new-collections'
+-%}
+{%- include 'collection-from-setting',
+  setting: section.settings.collection,
+  fallbacks: _featured_fallbacks
+-%}
+{%- liquid
   assign limit = section.settings.products_count
   assign columns = section.settings.columns | default: 4
   assign show_vendor = section.settings.show_vendor
@@ -29,7 +22,7 @@
         <h2 class="section-header__title h2">{{ section.settings.title | default: collection.title }}</h2>
       </div>
 
-      {%- if section.settings.show_view_all -%}
+      {%- if section.settings.show_view_all and collection != blank -%}
         <a href="{{ collection.url }}" class="btn btn--outline btn--sm">{{ 'sections.featured_collection.view_all' | t }}</a>
       {%- endif -%}
     </div>

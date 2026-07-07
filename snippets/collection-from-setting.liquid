@@ -1,0 +1,37 @@
+{%- comment -%}
+  Resolves `collection` in the parent scope from a collection setting + fallbacks.
+  Params:
+  - setting: collection picker value (object or handle string)
+  - fallbacks: comma-separated collection handles to try when setting is missing/invalid
+{%- endcomment -%}
+{%- liquid
+  assign collection = blank
+  assign _setting = setting
+
+  if _setting != blank
+    if _setting.handle != blank
+      assign collection = collections[_setting.handle]
+    else
+      assign collection = collections[_setting]
+    endif
+  endif
+
+  if collection == blank and fallbacks != blank
+    assign _fallback_list = fallbacks | split: ','
+    for _handle in _fallback_list
+      assign _trimmed = _handle | strip
+      if _trimmed == blank
+        continue
+      endif
+      assign _candidate = collections[_trimmed]
+      if _candidate != blank and _candidate.products_count > 0
+        assign collection = _candidate
+        break
+      endif
+    endfor
+  endif
+
+  if collection == blank
+    assign collection = collections.all
+  endif
+-%}

@@ -96,6 +96,7 @@
       "settings": {
         "subtitle": "Finish the build",
         "title": "Wheel accessories",
+        "collection": "accessories",
         "products_count": 8,
         "show_vendor": false
       }

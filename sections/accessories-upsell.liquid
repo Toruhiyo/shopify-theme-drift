@@ -1,18 +1,11 @@
 {%- liquid
-  assign _upsell_fallbacks = 'wheel-accessories,accessories,lug-nuts,spacers,addons,add-ons,upsell,all' | split: ','
-  assign collection = section.settings.collection
-  if collection == blank
-    for _handle in _upsell_fallbacks
-      assign _candidate = collections[_handle]
-      if _candidate != blank and _candidate.products_count > 0
-        assign collection = _candidate
-        break
-      endif
-    endfor
-  endif
-  if collection == blank
-    assign collection = collections.all
-  endif
+  assign _accessory_fallbacks = 'wheel-accessories,accessories,accessory,lug-nuts,spacers,addons,add-ons,upsell'
+-%}
+{%- include 'collection-from-setting',
+  setting: section.settings.collection,
+  fallbacks: _accessory_fallbacks
+-%}
+{%- liquid
   assign limit = section.settings.products_count
   assign show_vendor = section.settings.show_vendor
 -%}
@@ -26,7 +19,9 @@
         {%- endif -%}
         <h2 class="section-header__title h2">{{ section.settings.title }}</h2>
       </div>
-      <a href="{{ collection.url }}" class="btn btn--outline btn--sm">{{ 'sections.accessories.view_all' | t }}</a>
+      {%- if collection != blank -%}
+        <a href="{{ collection.url }}" class="btn btn--outline btn--sm">{{ 'sections.accessories.view_all' | t }}</a>
+      {%- endif -%}
     </div>
 
     <div class="carousel" data-carousel>
