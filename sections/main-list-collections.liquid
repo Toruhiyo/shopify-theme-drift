@@ -6,17 +6,7 @@
       {%- for collection in collections -%}
         <a href="{{ collection.url }}" class="category-tile">
           <div class="category-tile__media">
-            {%- if collection.featured_image -%}
-              <img
-                src="{{ collection.featured_image | image_url: width: 800 }}"
-                alt="{{ collection.title | escape }}"
-                width="800"
-                height="600"
-                loading="lazy"
-              >
-            {%- else -%}
-              {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'placeholder' }}
-            {%- endif -%}
+            {% render 'collection-tile-image', collection: collection, placeholder_index: forloop.index %}
           </div>
           <div class="category-tile__overlay"></div>
           <div class="category-tile__content">

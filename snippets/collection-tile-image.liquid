@@ -1,0 +1,50 @@
+{%- comment -%}
+  Renders a collection tile image from the admin collection image when set.
+  Accepts:
+  - collection: Collection drop
+  - link: optional menu link (used to resolve collection by URL when object is thin)
+  - width: image width (default 800)
+  - class: optional img class
+  - placeholder_index: forloop index for placeholder_svg_tag fallback
+{%- endcomment -%}
+{%- liquid
+  assign tile_collection = collection
+  if tile_collection == blank and link != blank
+    if link.type == 'collection_link' and link.object != blank
+      assign tile_collection = link.object
+    elsif link.url contains '/collections/'
+      assign link_handle = link.url | split: '/collections/' | last | split: '?' | first | split: '/' | first
+      assign tile_collection = collections[link_handle]
+    endif
+  endif
+
+  if tile_collection != blank and tile_collection.handle != blank
+    assign tile_collection = collections[tile_collection.handle]
+  endif
+
+  assign tile_image = nil
+  if tile_collection != blank
+    if tile_collection.image != blank
+      assign tile_image = tile_collection.image
+    elsif tile_collection.featured_image != blank
+      assign tile_image = tile_collection.featured_image
+    endif
+  endif
+
+  assign image_width = width | default: 800
+  assign image_class = class | default: ''
+  assign placeholder_index = placeholder_index | default: 1
+-%}
+
+{%- if tile_image != blank -%}
+  <img
+    src="{{ tile_image | image_url: width: image_width }}"
+    alt="{{ tile_collection.title | default: link.title | escape }}"
+    width="{{ image_width }}"
+    height="{{ image_width | divided_by: 1.333 | round }}"
+    class="{{ image_class }}"
+    loading="lazy"
+  >
+{%- else -%}
+  {{ 'collection-' | append: placeholder_index | placeholder_svg_tag: 'placeholder' }}
+{%- endif -%}
