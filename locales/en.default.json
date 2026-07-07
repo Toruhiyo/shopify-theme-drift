@@ -95,7 +95,7 @@
     "checkout": "Checkout",
     "empty": "Your cart is empty",
     "continue_shopping": "Continue Shopping",
-    "complete_setup": "Complete your setup",
+    "complete_setup": "Complete the job",
     "decrease": "Decrease quantity",
     "increase": "Increase quantity",
     "shipping_note": "Shipping and taxes calculated at checkout.",
@@ -125,8 +125,8 @@
     "legal": "Legal",
     "secure_checkout": "Secure Checkout",
     "free_shipping": "Free Shipping $99+",
-    "easy_returns": "Easy Returns",
-    "warranty_included": "Warranty Included",
+    "easy_returns": "Hassle-Free Returns",
+    "warranty_included": "Parts Warranty",
     "rights": "All rights reserved."
   },
   "contact": {
@@ -150,7 +150,7 @@
   "bizmis": {
     "panel": {
       "title": "Meet your voice store clerk",
-      "examples": "Looking for a laptop with great battery life.\nThese earbuds seem the same. Which is better for running?\nDoes this fast-charge an iPhone 15?\nWhere's my order? Tracking hasn't updated in days.\nThe charger came with the wrong plug type. Can I swap it?\nDo you ship to Spain, and is the warranty valid there?",
+      "examples": "I need front brake pads for a 2018 Honda Civic.\nWill this alternator fit a 2015 Ford F-150 with the 5.0?\nWhat's the difference between ceramic and semi-metallic pads?\nWhere's my order? Tracking hasn't updated in days.\nI ordered the wrong oil filter. Can I exchange it?\nDo you ship to Canada, and is the warranty valid there?",
       "example_tags": "Boost sales · Product discovery\nBoost sales · Product comparison\nBoost sales · Technical guidance\nSave support hours · Order status\nSave support hours · Returns guidance\nSave support hours · Pre-purchase FAQs",
       "install": "Install Bizmis",
       "just_say": "Just say",

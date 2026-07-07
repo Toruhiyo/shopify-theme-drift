@@ -1,36 +1,42 @@
 /* ============================================================
-   CRIMSON INDEX — Design System
-   Cold, minimal, Apple-like premium retail with red accent
+   DRIFT — Design System
+   Dark industrial automotive parts retail with safety-orange accent
    ============================================================ */
 
 :root {
   --header-height: 3.5rem;
-  --color-bg: #FFFFFF;
-  --color-fg: #111111;
-  --color-card: #F5F5F7;
-  --color-muted: #F5F5F7;
-  --color-muted-fg: #6E6E73;
-  --color-border: #E5E5EA;
-  --color-border-raw: #E5E5EA;
-  --color-primary: #D1001A;
-  --color-primary-fg: #FFFFFF;
+  --color-bg: #0C0E12;
+  --color-fg: #E8EAED;
+  --color-card: #161A21;
+  --color-muted: #1E232B;
+  --color-muted-fg: #8A919C;
+  --color-border: #2A3039;
+  --color-border-raw: #2A3039;
+  --color-primary: #FF6B00;
+  --color-primary-fg: #0C0E12;
   --color-success: #34C759;
   --color-warning: #FF9500;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
+  --glass-surface: linear-gradient(150deg, rgba(30, 35, 43, 0.92) 0%, rgba(22, 26, 33, 0.88) 60%, rgba(30, 35, 43, 0.9) 100%);
+  --scrim-hero-top: linear-gradient(to bottom, rgba(12, 14, 18, 0.88) 0%, rgba(12, 14, 18, 0.4) 55%, transparent 100%);
+  --scrim-hero-mobile: linear-gradient(to bottom, rgba(12, 14, 18, 0.86) 0%, rgba(12, 14, 18, 0.62) 45%, rgba(12, 14, 18, 0.86) 100%);
+  --scrim-product-actions: linear-gradient(to top, rgba(12, 14, 18, 0.95) 0%, rgba(12, 14, 18, 0.72) 60%, transparent 100%);
+  --font-body: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body-weight: 400;
   --font-body-style: normal;
   --font-body-size: 16px;
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading-weight: 600;
+  --font-heading: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading-weight: 700;
   --font-heading-style: normal;
   --heading-scale: 1;
   --type-scale: 1;
   --page-width: 1280px;
   --section-spacing: 64px;
-  --radius-button: 10px;
-  --radius-card: 16px;
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
-  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
+  --radius-button: 6px;
+  --radius-card: 8px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-elevated: 0 8px 24px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.25);
 }
 
 @media (min-width: 990px) {
@@ -47,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg, #fff);
+  background: var(--color-bg, #0C0E12);
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -86,8 +92,8 @@ html {
 /* --- Floating overlay scrollbar (OverlayScrollbars) ---
    The real scrollbar is a JS-driven overlay so it floats over the page with
    no reserved track/corridor. Native scrollbars are hidden once OS inits;
-   the rules below are only a minimal crimson fallback before JS runs / no-JS. */
-.os-theme-crimson {
+   the rules below are only a minimal accent fallback before JS runs / no-JS. */
+.os-theme-drift {
   --os-size: 12px;
   --os-padding-perpendicular: 3px;
   --os-padding-axis: 3px;
@@ -97,15 +103,15 @@ html {
   --os-track-border-radius: 999px;
   --os-handle-border-radius: 999px;
   --os-handle-min-size: 40px;
-  --os-handle-bg: color-mix(in srgb, var(--color-primary, #D1001A) 55%, var(--color-border-raw, #E5E5EA));
-  --os-handle-bg-hover: color-mix(in srgb, var(--color-primary, #D1001A) 80%, var(--color-border-raw, #E5E5EA));
-  --os-handle-bg-active: var(--color-primary, #D1001A);
+  --os-handle-bg: color-mix(in srgb, var(--color-primary, #FF6B00) 55%, var(--color-border-raw, #2A3039));
+  --os-handle-bg-hover: color-mix(in srgb, var(--color-primary, #FF6B00) 80%, var(--color-border-raw, #2A3039));
+  --os-handle-bg-active: var(--color-primary, #FF6B00);
 }
 
-/* Pre-JS / no-JS fallback: thin crimson native bar. */
+/* Pre-JS / no-JS fallback: thin accent native bar. */
 html {
   scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--color-primary, #D1001A) 55%, var(--color-border-raw, #E5E5EA)) transparent;
+  scrollbar-color: color-mix(in srgb, var(--color-primary, #FF6B00) 55%, var(--color-border-raw, #2A3039)) transparent;
 }
 html.os-initialized {
   scrollbar-width: auto;
@@ -286,8 +292,8 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 24px;
   height: 24px;
-  border: 2px solid var(--color-border, #E5E5EA);
-  border-top-color: var(--color-primary, #D1001A);
+  border: 2px solid var(--color-border, #2A3039);
+  border-top-color: var(--color-primary, #FF6B00);
   border-radius: 50%;
   animation: search-load-spin 0.6s linear infinite;
 }
@@ -387,13 +393,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn--outline {
   background: transparent;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   color: var(--color-fg);
 }
 
 .btn--outline:hover {
   border-color: var(--color-fg);
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .btn--outline:focus-visible {
@@ -442,7 +448,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card:hover {
-  border-color: var(--color-border-raw, #E5E5EA);
+  border-color: var(--color-border-raw, #2A3039);
 }
 
 /* --- Badges --- */
@@ -463,19 +469,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .badge--new {
-  background: var(--color-card, #F5F5F7);
+  background: var(--color-card, #161A21);
   color: var(--color-fg);
   border: 1px solid var(--color-border);
 }
 
 .badge--hot {
-  background: var(--color-card, #F5F5F7);
+  background: var(--color-card, #161A21);
   color: var(--color-primary);
   border: 1px solid var(--color-border);
 }
 
 .badge--refurbished {
-  background: var(--color-bg, #fff);
+  background: var(--color-bg, #0C0E12);
   color: var(--color-primary);
   border: 1.5px solid var(--color-primary);
   font-weight: 600;
@@ -489,8 +495,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .badge--open-box {
-  background: var(--color-fg, #111);
-  color: #fff;
+  background: var(--color-fg, #E8EAED);
+  color: var(--color-bg, #0C0E12);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -518,12 +524,12 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 .pdp__condition-badge--refurbished {
-  background: var(--color-bg, #fff);
+  background: var(--color-bg, #0C0E12);
   color: var(--color-primary);
   border: 1.5px solid var(--color-primary);
 }
 .pdp__condition-badge--open-box {
-  background: var(--color-fg, #111);
+  background: var(--color-fg, #E8EAED);
 }
 
 /* --- Forms --- */
@@ -531,7 +537,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   padding: 0.75rem 1rem;
   background: var(--color-bg);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   color: var(--color-fg);
   font-size: 0.9375rem;
@@ -541,7 +547,7 @@ h1, h2, h3, h4, h5, h6 {
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(209, 0, 26, 0.08);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .input::placeholder {
@@ -611,7 +617,7 @@ textarea.input {
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   color: var(--color-primary);
-  background: rgba(209, 0, 26, 0.06);
+  background: rgba(255, 107, 0, 0.06);
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-button);
 }
@@ -628,7 +634,7 @@ textarea.input {
 }
 
 .product-card:hover {
-  border-color: var(--color-border-raw, #E5E5EA);
+  border-color: var(--color-border-raw, #2A3039);
   box-shadow: var(--shadow-elevated);
   transform: translateY(-2px);
 }
@@ -687,7 +693,7 @@ textarea.input {
   display: flex;
   gap: 0.5rem;
   padding: 0.75rem;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 60%, transparent 100%);
+  background: var(--scrim-product-actions);
   transform: translateY(100%);
   transition: transform 250ms ease;
   z-index: 2;
@@ -751,14 +757,14 @@ textarea.input {
 .qty-selector {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   transition: border-color 180ms ease;
 }
 
 .qty-selector:focus-within {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(209, 0, 26, 0.08);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .qty-selector button {
@@ -780,8 +786,8 @@ textarea.input {
   text-align: center;
   background: none;
   border: none;
-  border-left: 1px solid var(--color-border-raw, #E5E5EA);
-  border-right: 1px solid var(--color-border-raw, #E5E5EA);
+  border-left: 1px solid var(--color-border-raw, #2A3039);
+  border-right: 1px solid var(--color-border-raw, #2A3039);
   -moz-appearance: textfield;
 }
 
@@ -804,7 +810,7 @@ textarea.input {
   justify-content: center;
   min-width: 2.75rem;
   padding: 0.5rem 0.875rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -818,7 +824,7 @@ textarea.input {
 
 .variant-pill.is-active {
   border-color: var(--color-primary);
-  background: rgba(209, 0, 26, 0.06);
+  background: rgba(255, 107, 0, 0.06);
   color: var(--color-fg);
 }
 
@@ -1026,9 +1032,9 @@ textarea.input {
 }
 
 /* Transparent while it sits over the hero; turns into solid chrome once the
-   hero has scrolled past. Text stays dark since the hero is light. */
+   hero has scrolled past. */
 .header__primary > .page-width {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(12, 14, 18, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
@@ -1487,7 +1493,7 @@ textarea.input {
   right: 0;
   min-width: 10rem;
   background: var(--color-bg);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-card);
   padding: 0.5rem 0;
   opacity: 0;
@@ -1542,7 +1548,7 @@ textarea.input {
   height: auto;
   gap: 0.3rem;
   padding: 0.34rem 0.62rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: 999px;
   color: var(--color-fg);
 }
@@ -1950,7 +1956,7 @@ textarea.input {
   max-width: calc(100vw - 2rem);
   padding: 0.85rem;
   background: #fff;
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
   border: 1px solid var(--color-border-raw, #e5e5ea);
   border-radius: 12px;
   box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.45);
@@ -1990,7 +1996,7 @@ textarea.input {
   border-radius: 8px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
   text-decoration: none;
   transition: background-color 0.15s ease;
 }
@@ -2116,7 +2122,7 @@ textarea.input {
   min-height: 100dvh;
 }
 
-/* Light scrim under the floating transparent header so the nav stays
+/* Dark scrim under the floating transparent header so the nav stays
    readable over busy promo photography. */
 .hero::before {
   content: '';
@@ -2126,7 +2132,7 @@ textarea.input {
   right: 0;
   height: 9rem;
   z-index: 2;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, transparent 100%);
+  background: var(--scrim-hero-top);
   pointer-events: none;
 }
 
@@ -2158,7 +2164,7 @@ textarea.input {
   object-fit: cover;
 }
 
-/* Welcome copy in the left column, over the white side of the studio shots.
+/* Welcome copy in the left column, over the dark side of the studio shots.
    Invites the visitor to talk to the clerk in the merchant's own voice. */
 .hero__container {
   position: relative;
@@ -2196,7 +2202,7 @@ textarea.input {
   font-size: clamp(2.2rem, 4.2vw, 3.4rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
 }
 
 .hero__title-line {
@@ -2253,21 +2259,15 @@ textarea.input {
     min-height: 100dvh;
   }
 
-  /* Repurpose the header-scrim slot as a full frosted-white veil between
+  /* Repurpose the header-scrim slot as a full dark veil between
      the photos and the copy, heavier at the edges for chrome and widget
-     legibility. Light, not dark: the store is light mode and the studio
-     shots should stay airy. */
+     legibility. */
   .hero::before {
     top: 0;
     bottom: 0;
     height: auto;
     z-index: 1;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.82) 0%,
-      rgba(255, 255, 255, 0.6) 45%,
-      rgba(255, 255, 255, 0.82) 100%
-    );
+    background: var(--scrim-hero-mobile);
   }
 
   .hero__container {
@@ -2394,7 +2394,7 @@ textarea.input {
   position: relative;
   overflow: hidden;
   background: var(--color-muted, #f5f5f7);
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
   padding: 5rem 0 4rem;
 }
 
@@ -2422,7 +2422,7 @@ textarea.input {
   mask-image: linear-gradient(to right, transparent 0%, #000 30%);
 }
 
-/* Light veil so the floating widget and page chrome keep contrast over busy
+/* Dark veil so the floating widget and page chrome keep contrast over busy
    scene images. */
 .hero-voice__visual::after {
   content: '';
@@ -2430,8 +2430,8 @@ textarea.input {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, transparent 38%),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.35) 0%, transparent 26%);
+    linear-gradient(to top, rgba(12, 14, 18, 0.55) 0%, transparent 38%),
+    linear-gradient(to bottom, rgba(12, 14, 18, 0.4) 0%, transparent 26%);
 }
 
 @media (max-width: 989.98px) {
@@ -2481,7 +2481,7 @@ textarea.input {
   font-size: clamp(2rem, 4.4vw, 3.5rem);
   line-height: 1.07;
   letter-spacing: -0.03em;
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
   margin: 1rem 0 0;
   max-width: 18ch;
 }
@@ -2517,12 +2517,12 @@ textarea.input {
 
 .hero-voice__btn.btn--outline {
   border-color: var(--color-border-raw, #e5e5ea);
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
 }
 
 .hero-voice__btn.btn--outline:hover {
-  border-color: var(--color-fg, #111);
-  background: rgba(0, 0, 0, 0.03);
+  border-color: var(--color-fg, #E8EAED);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 /* Locked while a voicechat is ongoing (widget lifecycle events). */
@@ -2544,7 +2544,7 @@ textarea.input {
    the line out loud -> see the outcome it drives -> progress rail. The
    matching use case scenes render separately as background slides
    (.voice-demo-scenes) under the same scope and frost through the glass.
-   Sales accents run brand red, support accents run ink. */
+   Sales accents run safety orange, support accents run steel. */
 .voice-demo {
   display: flex;
   flex-direction: column;
@@ -2554,13 +2554,13 @@ textarea.input {
   min-width: 0;
   padding: 1.5rem 1.7rem 1.35rem;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.62) 100%);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-surface);
   backdrop-filter: blur(22px) saturate(1.3);
   -webkit-backdrop-filter: blur(22px) saturate(1.3);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 30px 60px -42px rgba(0, 0, 0, 0.45);
+    0 1px 0 var(--glass-highlight) inset,
+    0 30px 60px -42px rgba(0, 0, 0, 0.65);
 }
 
 .voice-demo__header {
@@ -2579,7 +2579,7 @@ textarea.input {
   gap: 1.5rem;
   width: 100%;
   padding-bottom: 0.7rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-fg, #111) 10%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-fg, #E8EAED) 10%, transparent);
 }
 
 .voice-demo__benefit {
@@ -2615,7 +2615,7 @@ textarea.input {
 }
 
 .voice-demo__benefit:not(.is-active):hover {
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
 }
 
 .voice-demo__benefit:focus-visible {
@@ -2631,7 +2631,7 @@ textarea.input {
 }
 
 .voice-demo__benefit.is-active {
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
 }
 
 .voice-demo__benefit.is-active[data-benefit-pill='sales']::after {
@@ -2639,7 +2639,7 @@ textarea.input {
 }
 
 .voice-demo__benefit.is-active[data-benefit-pill='support']::after {
-  background: var(--color-fg, #111);
+  background: var(--color-fg, #E8EAED);
 }
 
 /* Progress rail: one notch per use case, tinted by the active benefit. */
@@ -2656,13 +2656,13 @@ textarea.input {
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-fg, #111) 13%, transparent);
+  background: color-mix(in srgb, var(--color-fg, #E8EAED) 13%, transparent);
   cursor: pointer;
   transition: background-color 0.3s ease, width 0.3s ease;
 }
 
 .voice-demo__dot:not(.is-active):hover {
-  background: color-mix(in srgb, var(--color-fg, #111) 28%, transparent);
+  background: color-mix(in srgb, var(--color-fg, #E8EAED) 28%, transparent);
 }
 
 .voice-demo__dot:focus-visible {
@@ -2676,7 +2676,7 @@ textarea.input {
 }
 
 .voice-demo__dot.is-active.is-support {
-  background: var(--color-fg, #111);
+  background: var(--color-fg, #E8EAED);
 }
 
 /* Outcome: the panel's headline — the sub-benefit the spoken line drives,
@@ -2705,7 +2705,7 @@ textarea.input {
 }
 
 .voice-demo__subbenefit.is-support {
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
 }
 
 .voice-demo__subbenefit.is-shown {
@@ -2751,7 +2751,7 @@ textarea.input {
 }
 
 .voice-demo__feature.is-support::before {
-  background: var(--color-fg, #111);
+  background: var(--color-fg, #E8EAED);
 }
 
 .voice-demo__feature[hidden] {
@@ -2814,7 +2814,7 @@ textarea.input {
   font-size: clamp(1.02rem, 1.35vw, 1.24rem);
   line-height: 1.34;
   letter-spacing: -0.012em;
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
   opacity: 0;
   pointer-events: none;
   transform: translateY(0.4rem);
@@ -2980,7 +2980,7 @@ textarea.input {
 }
 
 .category-tile:hover {
-  border-color: var(--color-border-raw, #E5E5EA);
+  border-color: var(--color-border-raw, #2A3039);
   box-shadow: var(--shadow-elevated);
 }
 
@@ -3079,7 +3079,7 @@ textarea.input {
   align-items: center;
   gap: 0.375rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: 100px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -3221,7 +3221,7 @@ textarea.input {
 .coll-filter-opt__check {
   width: 16px;
   height: 16px;
-  border: 1.5px solid var(--color-border-raw, #E5E5EA);
+  border: 1.5px solid var(--color-border-raw, #2A3039);
   border-radius: 3px;
   flex-shrink: 0;
   position: relative;
@@ -3258,7 +3258,7 @@ textarea.input {
   gap: 0.25rem;
   flex: 1;
   padding: 0.5rem 0.625rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   background: var(--color-bg);
 }
@@ -3295,7 +3295,7 @@ textarea.input {
 .sort-select {
   padding: 0.5rem 2rem 0.5rem 1rem;
   background: var(--color-bg);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   font-size: 0.8125rem;
   color: var(--color-fg);
@@ -3420,7 +3420,7 @@ textarea.input {
 
 .cart-drawer__remove:hover {
   color: var(--color-primary);
-  background: rgba(209, 0, 26, 0.06);
+  background: rgba(255, 107, 0, 0.06);
 }
 
 .cart-drawer__item-variant {
@@ -3635,7 +3635,7 @@ textarea.input {
 }
 
 .editorial__spec:hover {
-  border-color: var(--color-border-raw, #E5E5EA);
+  border-color: var(--color-border-raw, #2A3039);
 }
 
 .editorial__spec-value {
@@ -3669,13 +3669,13 @@ textarea.input {
   right: 1.25rem;
   font-size: 4rem;
   line-height: 1;
-  color: var(--color-border-raw, #E5E5EA);
+  color: var(--color-border-raw, #2A3039);
   font-family: Georgia, 'Times New Roman', serif;
   pointer-events: none;
 }
 
 .testimonial-card:hover {
-  border-color: var(--color-border-raw, #E5E5EA);
+  border-color: var(--color-border-raw, #2A3039);
 }
 
 .testimonial-card__stars {
@@ -3990,7 +3990,7 @@ textarea.input {
 }
 
 .pdp__gallery-thumb:hover {
-  border-color: var(--color-border-raw, #E5E5EA);
+  border-color: var(--color-border-raw, #2A3039);
 }
 
 .pdp__gallery-thumb.is-active {
@@ -4134,7 +4134,7 @@ textarea.input {
   object-fit: cover;
   display: block;
   border-radius: var(--radius-button);
-  border: 2px solid var(--color-border-raw, #E5E5EA);
+  border: 2px solid var(--color-border-raw, #2A3039);
   background: var(--color-card);
   transition: border-color 180ms ease;
 }
@@ -4175,7 +4175,7 @@ textarea.input {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   background: var(--color-bg);
   color: var(--color-fg);
@@ -4194,7 +4194,7 @@ textarea.input {
 
 .product-link-pill.is-active {
   border-color: var(--color-primary);
-  background: rgba(209, 0, 26, 0.06);
+  background: rgba(255, 107, 0, 0.06);
   color: var(--color-primary);
 }
 
@@ -4227,7 +4227,7 @@ textarea.input {
     right: 0;
     z-index: 90;
     padding: 0.875rem 1.5rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(12, 14, 18, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid var(--color-border);
@@ -4277,7 +4277,7 @@ textarea.input {
 .search-overlay__inner {
   width: min(40rem, 90vw);
   background: var(--color-bg);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-card);
   padding: 1.5rem;
   box-shadow: var(--shadow-elevated);
@@ -4287,7 +4287,7 @@ textarea.input {
   width: 100%;
   padding: 1rem 1.25rem;
   background: var(--color-card);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   color: var(--color-fg);
   font-size: 1.125rem;
@@ -4296,7 +4296,7 @@ textarea.input {
 .search-overlay__input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(209, 0, 26, 0.08);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 /* --- Carousel --- */
@@ -4346,7 +4346,7 @@ textarea.input {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   color: var(--color-muted-fg);
   transition: all 180ms ease;
@@ -4372,7 +4372,7 @@ textarea.input {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: 50%;
   background: var(--color-bg);
   color: var(--color-fg);
@@ -4453,7 +4453,7 @@ textarea.input {
   max-height: 90vh;
   overflow-y: auto;
   background: var(--color-bg);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-card);
   display: grid;
   grid-template-columns: 1fr;
@@ -4491,7 +4491,7 @@ textarea.input {
   align-items: center;
   justify-content: center;
   background: var(--color-bg);
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   z-index: 2;
 }
@@ -4511,7 +4511,7 @@ textarea.input {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid var(--color-border-raw, #E5E5EA);
+  border: 1px solid var(--color-border-raw, #2A3039);
   border-radius: var(--radius-button);
   font-size: 0.875rem;
   font-weight: 500;
@@ -4833,8 +4833,8 @@ textarea.input {
 }
 
 .bizmis-coach__close:hover {
-  background: rgba(0, 0, 0, 0.06);
-  color: var(--color-fg, #111);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-fg, #E8EAED);
 }
 
 .bizmis-coach__close:focus-visible {
@@ -4858,14 +4858,14 @@ textarea.input {
   font-weight: 700;
   letter-spacing: 0.02em;
   white-space: nowrap;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.55) 100%);
+  background: var(--glass-surface);
   backdrop-filter: blur(22px) saturate(1.3);
   -webkit-backdrop-filter: blur(22px) saturate(1.3);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 12px 28px -16px rgba(0, 0, 0, 0.3);
+    0 1px 0 var(--glass-highlight) inset,
+    0 12px 28px -16px rgba(0, 0, 0, 0.5);
   color: var(--color-primary);
   cursor: pointer;
   pointer-events: auto;
@@ -4898,15 +4898,15 @@ textarea.input {
   overflow: hidden;
   pointer-events: auto;
   padding: 0.85rem 1rem 0.9rem;
-  color: var(--color-fg, #111);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: var(--color-fg, #E8EAED);
+  border: 1px solid var(--glass-border);
   border-radius: 1rem;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.62) 100%);
+  background: var(--glass-surface);
   backdrop-filter: blur(22px) saturate(1.3);
   -webkit-backdrop-filter: blur(22px) saturate(1.3);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 20px 48px -24px rgba(0, 0, 0, 0.28);
+    0 1px 0 var(--glass-highlight) inset,
+    0 20px 48px -24px rgba(0, 0, 0, 0.55);
 }
 
 .bizmis-coach__slides {
@@ -5002,7 +5002,7 @@ textarea.input {
   font-size: 0.875rem;
   line-height: 1.4;
   letter-spacing: 0.01em;
-  color: var(--color-fg, #111);
+  color: var(--color-fg, #E8EAED);
 }
 
 .bizmis-coach__prompt::before {

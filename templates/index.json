@@ -12,7 +12,10 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "autoplay_interval": 3
+        "subtitle": "Automotive parts, sourced right",
+        "title": "The parts counter is open.",
+        "cta_text": "Just say your year and model.",
+        "autoplay_interval": 4
       }
     },
     "feature-strip": {
@@ -22,28 +25,28 @@
           "type": "feature",
           "settings": {
             "icon": "shipping",
-            "text": "Free shipping"
+            "text": "Free shipping $99+"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
             "icon": "shield",
-            "text": "2-year warranty"
+            "text": "OEM-grade quality"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "icon": "star",
-            "text": "Top rated"
+            "icon": "check",
+            "text": "Fitment verified"
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
-            "icon": "headphones",
-            "text": "24/7 support"
+            "icon": "star",
+            "text": "Parts experts on call"
           }
         }
       },
@@ -55,15 +58,15 @@
       "settings": {
         "use_store_collections": true,
         "subtitle": "Browse",
-        "title": "Shop by category",
+        "title": "Shop by system",
         "columns": "3"
       }
     },
     "new-arrivals": {
       "type": "featured-collection",
       "settings": {
-        "subtitle": "Just landed",
-        "title": "New arrivals",
+        "subtitle": "Just restocked",
+        "title": "Fresh inventory",
         "collection": "new-arrivals",
         "products_count": 8,
         "columns": "4",
@@ -80,7 +83,7 @@
       "type": "featured-collection",
       "settings": {
         "subtitle": "This week",
-        "title": "Hot deals",
+        "title": "Shop specials",
         "products_count": 8,
         "columns": "4",
         "layout": "carousel",
@@ -91,8 +94,8 @@
     "accessories": {
       "type": "accessories-upsell",
       "settings": {
-        "subtitle": "You may also need",
-        "title": "Complete your setup",
+        "subtitle": "Often bought together",
+        "title": "Complete the job",
         "products_count": 8,
         "show_vendor": false
       }
