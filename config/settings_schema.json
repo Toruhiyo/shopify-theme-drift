@@ -267,7 +267,14 @@
         "id": "bizmis_demo_enabled",
         "default": true,
         "label": "Enable Bizmis demo mode",
-        "info": "Master switch: shows the top demo promo bar, hydrates the Install Bizmis CTAs with the early-access code, and powers the hero voice demo."
+        "info": "Master switch for demo helpers: hydrates Install Bizmis CTAs with the early-access code and powers the voice demo band."
+      },
+      {
+        "type": "checkbox",
+        "id": "bizmis_promo_bar_enabled",
+        "default": true,
+        "label": "Show Bizmis promo bar",
+        "info": "Orange top strip with demo badge, other-demo links, and install CTA. Requires demo mode to be on."
       },
       {
         "type": "checkbox",
