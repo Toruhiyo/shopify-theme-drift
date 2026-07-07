@@ -1032,8 +1032,10 @@ textarea.input {
 }
 
 /* Transparent while it sits over the hero; turns into solid chrome once the
-   hero has scrolled past. */
-.header__primary > .page-width {
+   hero has scrolled past. Background on __primary so the bar spans full width;
+   page-width only constrains the inner content. */
+.header__primary {
+  position: relative;
   background: rgba(12, 14, 18, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1041,15 +1043,11 @@ textarea.input {
   transition: background-color 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
 }
 
-.header.is-transparent .header__primary > .page-width {
+.header.is-transparent .header__primary {
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom-color: transparent;
-}
-
-.header__primary {
-  position: relative;
 }
 
 .header__inner {
