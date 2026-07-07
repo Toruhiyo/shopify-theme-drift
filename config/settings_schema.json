@@ -310,7 +310,7 @@
         "id": "bizmis_demos",
         "label": "Other demo stores",
         "info": "One per line as 'Label | URL'. Shown in the promo bar 'Other demos' menu.",
-        "default": "Rolling District Wheels | https://rolling-district-wheels.myshopify.com/"
+        "default": "Meridian Consumer Electronics | https://meridian-consumer-electronics.myshopify.com/\nPaper & Pine Books | https://paper-and-pine-books.myshopify.com/"
       },
       {
         "type": "text",

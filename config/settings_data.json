@@ -30,6 +30,8 @@
     "minimal_shadows": true,
     "cart_type": "drawer",
     "cart_upsell_enabled": true,
+    "bizmis_demo_enabled": true,
+    "bizmis_demos": "Meridian Consumer Electronics | https://meridian-consumer-electronics.myshopify.com/\nPaper & Pine Books | https://paper-and-pine-books.myshopify.com/",
     "content_for_index": [],
     "blocks": {
       "9413881465143053370": {
