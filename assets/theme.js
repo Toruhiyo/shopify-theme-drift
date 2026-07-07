@@ -1685,7 +1685,7 @@
     resize();
     window.addEventListener('resize', resize);
 
-    const primary = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim() || '#FF6B00';
+    const primary = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim() || '#4DA8E8';
     const gravity = 0.32;
     const drag = 0.006;
     const duration = 2600;

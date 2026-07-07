@@ -1,5 +1,5 @@
 {%- liquid
-  assign _upsell_fallbacks = 'addons,add-ons,upsell,complete-order,before-you-go,all' | split: ','
+  assign _upsell_fallbacks = 'wheel-accessories,accessories,lug-nuts,spacers,addons,add-ons,upsell,all' | split: ','
   assign collection = section.settings.collection
   if collection == blank
     for _handle in _upsell_fallbacks
@@ -57,13 +57,13 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Often bought together"
+      "default": "Finish the build"
     },
     {
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Complete the job"
+      "default": "Wheel accessories"
     },
     {
       "type": "collection",

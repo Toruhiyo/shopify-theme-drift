@@ -53,8 +53,8 @@
       {
         "type": "color",
         "id": "color_primary",
-        "label": "Primary accent (safety orange)",
-        "default": "#FF6B00"
+        "label": "Primary accent (electric blue)",
+        "default": "#4DA8E8"
       },
       {
         "type": "color",
@@ -310,7 +310,7 @@
         "id": "bizmis_demos",
         "label": "Other demo stores",
         "info": "One per line as 'Label | URL'. Shown in the promo bar 'Other demos' menu.",
-        "default": "Crimson Index Electronics | https://crimson-index-electronics.myshopify.com/"
+        "default": "Rolling District Wheels | https://rolling-district-wheels.myshopify.com/"
       },
       {
         "type": "text",

@@ -49,16 +49,16 @@
   comment
     Use case -> collection map, keyed by the canonical (en.default) example
     order so it stays correct across every locale:
-      0  "brake pads for a 2018 Honda Civic"   -> brakes
-      1  "alternator fit a 2015 Ford F-150"    -> engine-parts
-      2  "ceramic vs semi-metallic pads"        -> brakes
-      3  "where's my order?"                   -> outlet
-      4  "wrong oil filter ... exchange it?"   -> filters-fluids
-      5  "ship to Canada / warranty"           -> outlet
+      0  "18 inch wheels ... 5x112"              -> 18-inch
+      1  "Hyper Black vs Matte Black"           -> hyper-black
+      2  "17x9 +22 fit a WRX"                   -> 17-inch
+      3  "where's my order?"                    -> outlet
+      4  "wrong offset ... exchange"            -> outlet
+      5  "ship to Canada / mounted returns"     -> outlet
     A scene block at the same position overrides its entry. Edit the handles
     below to match your store's collections.
   endcomment
-  assign scene_collection_map = 'brakes,engine-parts,brakes,outlet,filters-fluids,outlet' | split: ','
+  assign scene_collection_map = '18-inch,hyper-black,17-inch,outlet,outlet,outlet' | split: ','
 -%}
 
 {%- if part == 'scenes' -%}
