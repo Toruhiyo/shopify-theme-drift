@@ -53,14 +53,14 @@
       {
         "type": "color",
         "id": "color_primary",
-        "label": "Primary accent (electric blue)",
-        "default": "#4DA8E8"
+        "label": "Primary accent (red)",
+        "default": "#E02020"
       },
       {
         "type": "color",
         "id": "color_primary_foreground",
         "label": "Primary foreground",
-        "default": "#0C0E12"
+        "default": "#FFFFFF"
       },
       {
         "type": "color",
