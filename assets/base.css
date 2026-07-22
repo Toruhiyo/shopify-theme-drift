@@ -4802,6 +4802,31 @@ textarea.input {
   justify-content: center;
 }
 
+/* On the widget's mobile form factor (same breakpoint as the widget's own
+   isMobile detection: innerWidth < 768) the coachmark never shows — neither
+   the examples card nor the collapsed chip. Phones don't have the room, and
+   the mobile widget carries its own onboarding hints. */
+@media (max-width: 767px) {
+  .bizmis-coach {
+    display: none !important;
+  }
+}
+
+/* While the widget is minimized to its corner bubble (BIZ-275) the coachmark
+   has nothing to point at, so it softly fades away (bubble and chip alike).
+   Visibility flips only after the fade so the exit stays smooth; on restore
+   it flips back instantly and the base transition eases the card back in.
+   Placed after .is-shown and .is-collapsed so it wins when combined. */
+.bizmis-coach.is-widget-minimized {
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  visibility: hidden;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    visibility 0s linear 0.45s;
+}
+
 .bizmis-coach__close {
   position: absolute;
   top: 0.45rem;
@@ -5033,6 +5058,13 @@ textarea.input {
   .bizmis-coach {
     transition: opacity 0.2s ease;
     transform: none;
+  }
+
+  .bizmis-coach.is-widget-minimized {
+    transform: none;
+    transition:
+      opacity 0.2s ease,
+      visibility 0s linear 0.2s;
   }
 
   .bizmis-coach__slide,
