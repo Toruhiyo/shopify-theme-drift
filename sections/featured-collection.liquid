@@ -1,5 +1,5 @@
 {%- liquid
-  assign _featured_fallbacks = 'featured-wheels,featured,wheels,hot-deals,hottest-deals,deals,highlighted,new-arrivals,new-arrival,new-collections'
+  assign _featured_fallbacks = 'featured-parts,featured,hot-deals,hottest-deals,deals,highlighted,new-arrivals,new-arrival,new-collections'
 -%}
 {%- include 'collection-from-setting',
   setting: section.settings.collection,
@@ -69,7 +69,7 @@
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Featured wheels"
+      "default": "Featured parts"
     },
     {
       "type": "collection",

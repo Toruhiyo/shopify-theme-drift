@@ -1,5 +1,5 @@
 {%- liquid
-  assign _accessory_fallbacks = 'wheel-accessories,accessories,accessory,lug-nuts,spacers,addons,add-ons,upsell'
+  assign _accessory_fallbacks = 'accessories,accessory,addons,add-ons,upsell,essentials'
 -%}
 {%- include 'collection-from-setting',
   setting: section.settings.collection,
@@ -58,7 +58,7 @@
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Wheel accessories"
+      "default": "Shop essentials"
     },
     {
       "type": "collection",

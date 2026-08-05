@@ -95,7 +95,7 @@
     "checkout": "Checkout",
     "empty": "Your cart is empty",
     "continue_shopping": "Continue Shopping",
-    "complete_setup": "Wheel accessories",
+    "complete_setup": "Shop essentials",
     "decrease": "Decrease quantity",
     "increase": "Increase quantity",
     "shipping_note": "Shipping and taxes calculated at checkout.",
@@ -124,9 +124,9 @@
     "support": "Support",
     "legal": "Legal",
     "secure_checkout": "Secure Checkout",
-    "free_shipping": "Free Shipping on Sets",
-    "easy_returns": "Mount-Free Returns",
-    "warranty_included": "Finish Warranty",
+    "free_shipping": "Free Shipping",
+    "easy_returns": "Easy Returns",
+    "warranty_included": "Parts Warranty",
     "rights": "All rights reserved."
   },
   "contact": {
@@ -150,7 +150,7 @@
   "bizmis": {
     "panel": {
       "title": "Meet your voice store clerk",
-      "examples": "I need 18 inch wheels for a 2020 BMW 3 Series, 5x112.\nWhat's the difference between Hyper Black and Matte Black?\nWill 17x9 +22 fit a 2018 WRX without rubbing?\nWhere's my order? Tracking hasn't updated in days.\nI ordered the wrong offset. Can I exchange them?\nDo you ship to Canada, and what's the return policy on mounted wheels?",
+      "examples": "I need a cat-back exhaust for a 2020 Mustang GT.\nDo you have 18 inch wheels for a BMW 3 Series, 5x112?\nWill this turbo kit fit a 2018 WRX?\nWhere's my order? Tracking hasn't updated in days.\nI ordered the wrong brake pads. Can I exchange them?\nDo you ship to Canada, and what's the return policy?",
       "example_tags": "Boost sales · Product discovery\nBoost sales · Product comparison\nBoost sales · Technical guidance\nSave support hours · Order status\nSave support hours · Returns guidance\nSave support hours · Pre-purchase FAQs",
       "install": "Install Bizmis",
       "just_say": "Just say",

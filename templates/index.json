@@ -12,9 +12,9 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "subtitle": "Aftermarket wheels & rims",
-        "title": "Find your fit.",
-        "cta_text": "Just say your bolt pattern.",
+        "subtitle": "Performance car parts",
+        "title": "Build it right.",
+        "cta_text": "Just say what you need.",
         "autoplay_interval": 4
       }
     },
@@ -25,28 +25,28 @@
           "type": "feature",
           "settings": {
             "icon": "shipping",
-            "text": "Free shipping on wheel sets"
+            "text": "Free shipping on orders"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
             "icon": "check",
-            "text": "Bolt pattern verified"
+            "text": "Vehicle fitment verified"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
             "icon": "star",
-            "text": "15\"–20\" sizes in stock"
+            "text": "Wheels, exhaust, turbo & more"
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
             "icon": "shield",
-            "text": "Wheel fitment experts"
+            "text": "Performance parts experts"
           }
         }
       },
@@ -83,7 +83,7 @@
       "type": "featured-collection",
       "settings": {
         "subtitle": "This week",
-        "title": "Featured wheels",
+        "title": "Featured parts",
         "products_count": 8,
         "columns": "4",
         "layout": "carousel",
@@ -95,7 +95,7 @@
       "type": "accessories-upsell",
       "settings": {
         "subtitle": "Finish the build",
-        "title": "Wheel accessories",
+        "title": "Shop essentials",
         "collection": "accessories",
         "products_count": 8,
         "show_vendor": false
