@@ -32,6 +32,7 @@
     "cart_upsell_enabled": true,
     "bizmis_demo_enabled": true,
     "bizmis_promo_bar_enabled": false,
+    "bizmis_coachmark_enabled": false,
     "bizmis_demos": "Meridian Consumer Electronics | https://meridian-consumer-electronics.myshopify.com/\nPaper & Pine Books | https://paper-and-pine-books.myshopify.com/",
     "content_for_index": [],
     "blocks": {
